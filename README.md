@@ -1,4 +1,4 @@
-# Steps
+# Steps #: el "#" para indicar que es un titulo
 
 # Game Project
 
