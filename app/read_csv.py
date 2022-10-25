@@ -3,7 +3,7 @@ from email import header
 from hashlib import new
 
 def read_csv(path):#creamos la funcion con el parametro "path=el cual sera la ruta de nuestro data.csv"
-    with open(path,"r") as csvfile:# usamos un with para que el archivo se cierre de forma automatica una vez finalizada la lectura//pasamos el parametro ruta y la "r" para lectura//le agregamos el nombre "csvfile" al csv que leyamos
+    with open(path,"r") as csvfile: # usamos un with para que el archivo se cierre de forma automatica una vez finalizada la lectura//pasamos el parametro ruta y la "r" para lectura//le agregamos el nombre "csvfile" al csv que leyamos
         reader = csv.reader(csvfile,delimiter=",")# usamos la funcion "reader" de la libreria "csv" para leer el csv(pasamos por parametro el nombre del archivo "csvfile" y como estan separados los datos de ese archivo ",")
         header = next(reader)#se paramos las primeras columnas en una variable llamada "header" para posteriormente crear un diccionario
         data=[]#creamos una lista vacia

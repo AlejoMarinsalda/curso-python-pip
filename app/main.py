@@ -1,21 +1,23 @@
+from numpy import char
 import utils
 import read_csv
 import charts
+import pandas as pd
 
 def run():
 
-    data = read_csv.read_csv("./app/data.csv")
-    MUNDO="MUNDO"
+    df = pd.read_csv("data.csv") #leemos el CSV con pandas 
+    df = df[df["Continent"]=="Africa"] #elegimos en que columnas se enfoque
+    countries = df["Country/Territory"].values #elgimos uqe separe la columna de paises
+    percentages=df["World Population Percentage"].values
+    charts.generate_pie_chart(countries,percentages)
     
-    populatio_global=[]
-    for country in data:
-        populatio_global.append (int(country['2022 Population']))
-    def suma():
-        for population in populatio_global:
-            suma_population =+ populatio_global
-        return suma_population
+    data = read_csv.read_csv("data.csv")
     
-    charts.generate_pie_chart(MUNDO,populatio_global)
+    country = input("Type Country => ").capitalize()
+  
+    
+    print(country)
     
     result = utils.population_by_country(data,country)
     if len(result) > 0:
